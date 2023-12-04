@@ -1,41 +1,51 @@
-# Home_Sales
-The purpose of this project is to use SparkSQL to determine key metrics about home sales data. Spark is used to create temporary views, partition the data, cache and uncache a temporary table, and verify that the table has been uncached.
+# Home_Sales_Analysis_with_PySpark
 
-Process: 
+## Overview:
 
-Import the necessary PySpark SQL functions.
+In this project, I analyze home sales data using PySpark. The project is structured to cover the creation of Spark DataFrames, temporary tables, and execution of SparkSQL queries to answer specific questions regarding home prices, characteristics, and performance.
 
-Read the home_sales_revised.csv data into a Spark DataFrame.
+## Project Steps:
 
-Create a temporary table called home_sales.
+### 1. Data Preparation:
 
-Questions answered using SparkSQL:
+- Imported necessary PySpark SQL functions.
+- Read the 'home_sales_revised.csv' data into a Spark DataFrame.
+- Created a temporary table named 'home_sales'.
 
-  Q: What is the average price for a four-bedroom house sold for each year? Round off your answer to two decimal places.
-  A:
+### 2. SparkSQL Queries:
 
-  Q: What is the average price of a home for each year it was built that has three bedrooms and three bathrooms? Round off your answer to two decimal places.
-  A: 
+1. **Average Price for a Four-Bedroom House:**
+   - Query to calculate the average price for a four-bedroom house sold for each year, rounded to two decimal places.
 
-  Q: What is the average price of a home for each year that has three bedrooms, three bathrooms, two floors, and is greater than or equal to 2,000 square feet? Round off your answer to two decimal places.
-  A: 
+2. **Average Price of a Home with Specific Characteristics:**
+   - Query to find the average price of homes with three bedrooms and three bathrooms for each year built, rounded to two decimal places.
 
-  Q: What is the "view" rating for homes costing more than or equal to $350,000? Determine the run time for this query, and round off your answer to two decimal places.
-  A: 
+3. **Average Price of Homes with Specific Features:**
+   - Query to determine the average price of homes with three bedrooms, three bathrooms, two floors, and an area greater than or equal to 2,000 square feet for each year built, rounded to two decimal places.
 
-Cache temporary table home_sales and check if the table is cached.
+4. **View Rating for Expensive Homes:**
+   - Query to identify the "view" rating for homes costing more than or equal to $350,000, with runtime measurement.
 
-Using the cached data, run query that filters out the view ratings with an average price of greater than or equal to $350,000. Determine the runtime and compare it to uncached runtime.
+### 3. Caching and Performance Comparison:
 
-Partition by the "date_built" field on the formatted parquet home sales data.
+1. **Caching:**
+   - Cached the temporary table 'home_sales'.
+   - Checked if the temporary table is cached.
 
-Create a temporary table for the parquet data.
+2. **Query Performance - Cached vs. Uncached:**
+   - Ran the view rating query on the cached temporary table and computed the runtime.
+   - Partitioned the dataset by the 'date_built' field and created a temporary table for the formatted parquet data.
 
-Run the query that filters out the view ratings with an average price of greater than or equal to $350,000. Determine the runtime and compare it to uncached runtime.
+3. **Parquet Data Query Performance:**
+   - Ran the view rating query on the parquet temporary table and computed the runtime.
 
-Uncache the home_sales temporary table and verify that the home_sales temporary table is uncached using PySpark.
+4. **Uncaching:**
+   - Uncached the 'home_sales' temporary table.
+   - Verified that the temporary table is uncached.
 
-Home_Sales.ipynb file downloaded and uploaded into this "Home_Sales" GitHub repository.
+### 4. Repository Structure:
+
+- The notebook 'Home_Sales.ipynb' contains all the code and queries.
+- The GitHub repository is named 'Home_Sales' and hosts the project files.
 
 
-Imporvement comments: Flesh out report as well by providing more details and context. 
